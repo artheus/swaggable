@@ -1,0 +1,11 @@
+info:
+  description:
+  version: "1.0.0"
+  title: Swaggable Example
+  contact: Morten
+    email: morten.hekkvang@gmail.com
+  license:
+    name: The Unlicense
+    url: http://unlicense.org/
+servers:
+  - url: http://swaggable.artheus.se/api
