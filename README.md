@@ -4,6 +4,8 @@ Simple language to generate larger swagger specs for code generation
 
 # Swaggable syntax
 
+Since this implements a DSL for generating Swagger specifications, I feel the need to explain the syntax a bit.
+
 ## Types
 
 All types specified in OpenApi are available. These are:
@@ -25,6 +27,16 @@ parameter type identifier, `string` is the array item type and `stringArray` is 
 
 You will never write `object` as the type of a parameter in Swaggable. You rather use the name of an other
 component as the type identifier for the parameter. E.g: `MyComponent parameterName`
+
+## Annotations
+
+When is comes to indexed fields (eg. searchables) and string formats I decided to go with simple annotations.
+There are several examples of this in `example/employers`. See the examples below, or the example model source for syntax.
+
+The available annotations are:
+* __required__ - flags a parameter as required
+* __indexed__ - indexed field, which will be used for referring to a persisted component instance through the final API
+* __format.*__ - the string formats specified in Swagger documentation
 
 ## Base components
 
