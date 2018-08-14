@@ -1,8 +1,10 @@
+openapi: "3.0.0"
 info:
-  description:
+  description: Employer administration back-end
   version: "1.0.0"
   title: Swaggable Example
-  contact: Morten
+  contact:
+    name: Morten Hekkvang
     email: morten.hekkvang@gmail.com
   license:
     name: The Unlicense

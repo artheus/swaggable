@@ -11,6 +11,9 @@ type SwaggableParserListener interface {
 	// EnterProgram is called when entering the program production.
 	EnterProgram(c *ProgramContext)
 
+	// EnterBaseDeclaration is called when entering the baseDeclaration production.
+	EnterBaseDeclaration(c *BaseDeclarationContext)
+
 	// EnterObjDeclaration is called when entering the objDeclaration production.
 	EnterObjDeclaration(c *ObjDeclarationContext)
 
@@ -67,6 +70,9 @@ type SwaggableParserListener interface {
 
 	// ExitProgram is called when exiting the program production.
 	ExitProgram(c *ProgramContext)
+
+	// ExitBaseDeclaration is called when exiting the baseDeclaration production.
+	ExitBaseDeclaration(c *BaseDeclarationContext)
 
 	// ExitObjDeclaration is called when exiting the objDeclaration production.
 	ExitObjDeclaration(c *ObjDeclarationContext)

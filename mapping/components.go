@@ -1,13 +1,25 @@
-package main
+package mapping
 
 import (
 	"strings"
 
 	"github.com/artheus/swaggable/antlr/parser"
+
+	"github.com/artheus/swaggable/swagger"
 )
 
-func CreateComponent(ctx *parser.ObjDeclarationContext) *Component {
-	var comp = NewComponent(ctx.Identifier().GetText())
+type BaseElement struct {
+	*swagger.Component
+}
+
+func NewBaseElement(name string) *BaseElement {
+	be := new(BaseElement)
+	be.Component = swagger.NewComponent(name)
+	return be
+}
+
+func CreateComponent(ctx *parser.ObjDeclarationContext) *swagger.Component {
+	var comp = swagger.NewComponent(ctx.Identifier().GetText())
 	var objTail = ctx.ObjTail().(*parser.ObjTailContext)
 
 	if objTail.ExtendsStatement() != nil {
@@ -21,29 +33,44 @@ func CreateComponent(ctx *parser.ObjDeclarationContext) *Component {
 	return comp
 }
 
-func CreateEnum(ctx *parser.EnumDeclarationContext) *Enum {
-	var enum = new(Enum)
+func CreateEnum(ctx *parser.EnumDeclarationContext) *swagger.Component {
+	var enum = swagger.NewComponent(ctx.Identifier().GetText())
 
-	enum.Name = ctx.Identifier().GetText()
-	Type t = typeContextToType(ctx.TypeName().(*parser.TypeNameContext))
-	enum.TypeName = t.GetText()
+	t := typeContextToType(ctx.TypeName().(*parser.TypeNameContext))
+	enum.Type = t.GetText()
 
 	for _, enumElm := range ctx.EnumBlock().(*parser.EnumBlockContext).AllIdentifier() {
-		enum.Values = append(enum.Values, enumElm.GetText())
+		enum.EnumValues = append(enum.EnumValues, enumElm.GetText())
 	}
 
 	return enum
 }
 
-func decorateExtends(comp *Component, ctx *parser.ExtendsStatementContext) {
+func CreateBase(ctx *parser.BaseDeclarationContext) *BaseElement {
+	base := NewBaseElement(ctx.Identifier().GetText())
+
+	var objTail = ctx.ObjTail().(*parser.ObjTailContext)
+
+	if objTail.ExtendsStatement() != nil {
+		decorateExtends(base.Component, objTail.ExtendsStatement().(*parser.ExtendsStatementContext))
+	}
+
+	for _, objElm := range objTail.AllObjElement() {
+		decorateParameter(base.Component, objElm.(*parser.ObjElementContext).ParameterDefinition().(*parser.ParameterDefinitionContext))
+	}
+
+	return base
+}
+
+func decorateExtends(comp *swagger.Component, ctx *parser.ExtendsStatementContext) {
 	// Collect extends names
 	for _, tkn := range ctx.IdentifierList().(*parser.IdentifierListContext).AllIdentifier() {
 		comp.Extends = append(comp.Extends, tkn.GetText())
 	}
 }
 
-func decorateParameter(comp *Component, ctx *parser.ParameterDefinitionContext) {
-	var property = new(ComponentProperty)
+func decorateParameter(comp *swagger.Component, ctx *parser.ParameterDefinitionContext) {
+	var property = swagger.NewComponentProperty()
 
 	property.Name = ctx.Identifier().GetText()
 	decoratePropertyType(property, ctx.TypeName().(*parser.TypeNameContext))
@@ -68,10 +95,10 @@ func decorateParameter(comp *Component, ctx *parser.ParameterDefinitionContext) 
 		}
 	}
 
-	comp.addProperty(property)
+	comp.AddProperty(property)
 }
 
-func decoratePropertyType(prop *ComponentProperty, ctx *parser.TypeNameContext) {
+func decoratePropertyType(prop *swagger.ComponentProperty, ctx *parser.TypeNameContext) {
 	var t = typeContextToType(ctx)
 
 	if t.Items != nil {
@@ -87,8 +114,8 @@ func decoratePropertyType(prop *ComponentProperty, ctx *parser.TypeNameContext) 
 	}
 }
 
-func typeContextToType(ctx *parser.TypeNameContext) *Type {
-	var t = new(Type)
+func typeContextToType(ctx *parser.TypeNameContext) *swagger.Type {
+	var t = swagger.NewType()
 
 	if ctx.NativeType() != nil {
 		if ctx.NativeType().(*parser.NativeTypeContext).ArrayType() != nil {

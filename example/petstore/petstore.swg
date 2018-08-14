@@ -5,3 +5,7 @@ comp NewPet {
 comp Pet < NewPet {
   number id (required indexed)
 }
+
+comp MapComponent {
+  map<string,Note> noteMap (required)
+}

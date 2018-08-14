@@ -16,101 +16,105 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 37, 161,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 39, 168,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
 	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
-	18, 4, 19, 9, 19, 4, 20, 9, 20, 3, 2, 5, 2, 42, 10, 2, 3, 2, 3, 2, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 5, 3, 5,
-	7, 5, 59, 10, 5, 12, 5, 14, 5, 62, 11, 5, 3, 5, 3, 5, 3, 6, 3, 6, 3, 6,
-	7, 6, 69, 10, 6, 12, 6, 14, 6, 72, 11, 6, 3, 7, 3, 7, 3, 7, 3, 8, 5, 8,
-	78, 10, 8, 3, 8, 3, 8, 7, 8, 82, 10, 8, 12, 8, 14, 8, 85, 11, 8, 3, 8,
-	3, 8, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 5, 9, 94, 10, 9, 3, 10, 3, 10, 3, 10,
-	3, 10, 3, 10, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 12, 3,
-	12, 5, 12, 110, 10, 12, 3, 13, 3, 13, 3, 13, 3, 13, 3, 14, 3, 14, 3, 14,
-	3, 14, 3, 14, 3, 14, 3, 14, 3, 14, 3, 14, 3, 14, 3, 14, 3, 14, 5, 14, 128,
-	10, 14, 3, 15, 3, 15, 3, 16, 3, 16, 3, 16, 3, 16, 5, 16, 136, 10, 16, 3,
-	17, 3, 17, 3, 17, 3, 17, 6, 17, 142, 10, 17, 13, 17, 14, 17, 143, 3, 17,
-	3, 17, 5, 17, 148, 10, 17, 3, 18, 3, 18, 3, 19, 3, 19, 5, 19, 154, 10,
-	19, 3, 20, 6, 20, 157, 10, 20, 13, 20, 14, 20, 158, 3, 20, 2, 2, 21, 2,
-	4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 2,
-	2, 2, 169, 2, 41, 3, 2, 2, 2, 4, 45, 3, 2, 2, 2, 6, 49, 3, 2, 2, 2, 8,
-	56, 3, 2, 2, 2, 10, 65, 3, 2, 2, 2, 12, 73, 3, 2, 2, 2, 14, 77, 3, 2, 2,
-	2, 16, 93, 3, 2, 2, 2, 18, 95, 3, 2, 2, 2, 20, 100, 3, 2, 2, 2, 22, 109,
-	3, 2, 2, 2, 24, 111, 3, 2, 2, 2, 26, 127, 3, 2, 2, 2, 28, 129, 3, 2, 2,
-	2, 30, 135, 3, 2, 2, 2, 32, 137, 3, 2, 2, 2, 34, 149, 3, 2, 2, 2, 36, 153,
-	3, 2, 2, 2, 38, 156, 3, 2, 2, 2, 40, 42, 5, 38, 20, 2, 41, 40, 3, 2, 2,
-	2, 41, 42, 3, 2, 2, 2, 42, 43, 3, 2, 2, 2, 43, 44, 7, 2, 2, 3, 44, 3, 3,
-	2, 2, 2, 45, 46, 7, 12, 2, 2, 46, 47, 7, 34, 2, 2, 47, 48, 5, 14, 8, 2,
-	48, 5, 3, 2, 2, 2, 49, 50, 7, 13, 2, 2, 50, 51, 7, 34, 2, 2, 51, 52, 7,
-	3, 2, 2, 52, 53, 5, 22, 12, 2, 53, 54, 7, 4, 2, 2, 54, 55, 5, 8, 5, 2,
-	55, 7, 3, 2, 2, 2, 56, 60, 7, 7, 2, 2, 57, 59, 7, 34, 2, 2, 58, 57, 3,
-	2, 2, 2, 59, 62, 3, 2, 2, 2, 60, 58, 3, 2, 2, 2, 60, 61, 3, 2, 2, 2, 61,
-	63, 3, 2, 2, 2, 62, 60, 3, 2, 2, 2, 63, 64, 7, 8, 2, 2, 64, 9, 3, 2, 2,
-	2, 65, 70, 7, 34, 2, 2, 66, 67, 7, 10, 2, 2, 67, 69, 7, 34, 2, 2, 68, 66,
-	3, 2, 2, 2, 69, 72, 3, 2, 2, 2, 70, 68, 3, 2, 2, 2, 70, 71, 3, 2, 2, 2,
-	71, 11, 3, 2, 2, 2, 72, 70, 3, 2, 2, 2, 73, 74, 7, 3, 2, 2, 74, 75, 5,
-	10, 6, 2, 75, 13, 3, 2, 2, 2, 76, 78, 5, 12, 7, 2, 77, 76, 3, 2, 2, 2,
-	77, 78, 3, 2, 2, 2, 78, 79, 3, 2, 2, 2, 79, 83, 7, 7, 2, 2, 80, 82, 5,
-	34, 18, 2, 81, 80, 3, 2, 2, 2, 82, 85, 3, 2, 2, 2, 83, 81, 3, 2, 2, 2,
-	83, 84, 3, 2, 2, 2, 84, 86, 3, 2, 2, 2, 85, 83, 3, 2, 2, 2, 86, 87, 7,
-	8, 2, 2, 87, 15, 3, 2, 2, 2, 88, 94, 7, 14, 2, 2, 89, 94, 7, 15, 2, 2,
-	90, 94, 7, 17, 2, 2, 91, 94, 5, 18, 10, 2, 92, 94, 5, 20, 11, 2, 93, 88,
-	3, 2, 2, 2, 93, 89, 3, 2, 2, 2, 93, 90, 3, 2, 2, 2, 93, 91, 3, 2, 2, 2,
-	93, 92, 3, 2, 2, 2, 94, 17, 3, 2, 2, 2, 95, 96, 7, 16, 2, 2, 96, 97, 7,
-	3, 2, 2, 97, 98, 5, 22, 12, 2, 98, 99, 7, 4, 2, 2, 99, 19, 3, 2, 2, 2,
-	100, 101, 7, 18, 2, 2, 101, 102, 7, 3, 2, 2, 102, 103, 5, 22, 12, 2, 103,
-	104, 7, 10, 2, 2, 104, 105, 5, 22, 12, 2, 105, 106, 7, 4, 2, 2, 106, 21,
-	3, 2, 2, 2, 107, 110, 7, 34, 2, 2, 108, 110, 5, 16, 9, 2, 109, 107, 3,
-	2, 2, 2, 109, 108, 3, 2, 2, 2, 110, 23, 3, 2, 2, 2, 111, 112, 7, 22, 2,
-	2, 112, 113, 7, 9, 2, 2, 113, 114, 7, 34, 2, 2, 114, 25, 3, 2, 2, 2, 115,
-	128, 7, 23, 2, 2, 116, 128, 7, 24, 2, 2, 117, 128, 7, 25, 2, 2, 118, 128,
-	7, 26, 2, 2, 119, 128, 7, 27, 2, 2, 120, 128, 7, 28, 2, 2, 121, 128, 7,
-	29, 2, 2, 122, 128, 7, 30, 2, 2, 123, 128, 7, 31, 2, 2, 124, 128, 7, 32,
-	2, 2, 125, 128, 7, 33, 2, 2, 126, 128, 5, 24, 13, 2, 127, 115, 3, 2, 2,
-	2, 127, 116, 3, 2, 2, 2, 127, 117, 3, 2, 2, 2, 127, 118, 3, 2, 2, 2, 127,
-	119, 3, 2, 2, 2, 127, 120, 3, 2, 2, 2, 127, 121, 3, 2, 2, 2, 127, 122,
-	3, 2, 2, 2, 127, 123, 3, 2, 2, 2, 127, 124, 3, 2, 2, 2, 127, 125, 3, 2,
-	2, 2, 127, 126, 3, 2, 2, 2, 128, 27, 3, 2, 2, 2, 129, 130, 5, 26, 14, 2,
-	130, 29, 3, 2, 2, 2, 131, 136, 7, 19, 2, 2, 132, 136, 7, 21, 2, 2, 133,
-	136, 7, 20, 2, 2, 134, 136, 5, 28, 15, 2, 135, 131, 3, 2, 2, 2, 135, 132,
-	3, 2, 2, 2, 135, 133, 3, 2, 2, 2, 135, 134, 3, 2, 2, 2, 136, 31, 3, 2,
-	2, 2, 137, 138, 5, 22, 12, 2, 138, 147, 7, 34, 2, 2, 139, 141, 7, 5, 2,
-	2, 140, 142, 5, 30, 16, 2, 141, 140, 3, 2, 2, 2, 142, 143, 3, 2, 2, 2,
-	143, 141, 3, 2, 2, 2, 143, 144, 3, 2, 2, 2, 144, 145, 3, 2, 2, 2, 145,
-	146, 7, 6, 2, 2, 146, 148, 3, 2, 2, 2, 147, 139, 3, 2, 2, 2, 147, 148,
-	3, 2, 2, 2, 148, 33, 3, 2, 2, 2, 149, 150, 5, 32, 17, 2, 150, 35, 3, 2,
-	2, 2, 151, 154, 5, 4, 3, 2, 152, 154, 5, 6, 4, 2, 153, 151, 3, 2, 2, 2,
-	153, 152, 3, 2, 2, 2, 154, 37, 3, 2, 2, 2, 155, 157, 5, 36, 19, 2, 156,
-	155, 3, 2, 2, 2, 157, 158, 3, 2, 2, 2, 158, 156, 3, 2, 2, 2, 158, 159,
-	3, 2, 2, 2, 159, 39, 3, 2, 2, 2, 15, 41, 60, 70, 77, 83, 93, 109, 127,
-	135, 143, 147, 153, 158,
+	18, 4, 19, 9, 19, 4, 20, 9, 20, 4, 21, 9, 21, 3, 2, 5, 2, 44, 10, 2, 3,
+	2, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3, 4, 3, 4, 3, 5, 3, 5, 3,
+	5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 6, 3, 6, 7, 6, 65, 10, 6, 12, 6, 14, 6, 68,
+	11, 6, 3, 6, 3, 6, 3, 7, 3, 7, 3, 7, 7, 7, 75, 10, 7, 12, 7, 14, 7, 78,
+	11, 7, 3, 8, 3, 8, 3, 8, 3, 9, 5, 9, 84, 10, 9, 3, 9, 3, 9, 7, 9, 88, 10,
+	9, 12, 9, 14, 9, 91, 11, 9, 3, 9, 3, 9, 3, 10, 3, 10, 3, 10, 3, 10, 3,
+	10, 5, 10, 100, 10, 10, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 12, 3, 12,
+	3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 13, 3, 13, 5, 13, 116, 10, 13, 3,
+	14, 3, 14, 3, 14, 3, 14, 3, 15, 3, 15, 3, 15, 3, 15, 3, 15, 3, 15, 3, 15,
+	3, 15, 3, 15, 3, 15, 3, 15, 3, 15, 5, 15, 134, 10, 15, 3, 16, 3, 16, 3,
+	17, 3, 17, 3, 17, 3, 17, 5, 17, 142, 10, 17, 3, 18, 3, 18, 3, 18, 3, 18,
+	6, 18, 148, 10, 18, 13, 18, 14, 18, 149, 3, 18, 3, 18, 5, 18, 154, 10,
+	18, 3, 19, 3, 19, 3, 20, 3, 20, 3, 20, 5, 20, 161, 10, 20, 3, 21, 6, 21,
+	164, 10, 21, 13, 21, 14, 21, 165, 3, 21, 2, 2, 22, 2, 4, 6, 8, 10, 12,
+	14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 2, 2, 2, 176, 2,
+	43, 3, 2, 2, 2, 4, 47, 3, 2, 2, 2, 6, 51, 3, 2, 2, 2, 8, 55, 3, 2, 2, 2,
+	10, 62, 3, 2, 2, 2, 12, 71, 3, 2, 2, 2, 14, 79, 3, 2, 2, 2, 16, 83, 3,
+	2, 2, 2, 18, 99, 3, 2, 2, 2, 20, 101, 3, 2, 2, 2, 22, 106, 3, 2, 2, 2,
+	24, 115, 3, 2, 2, 2, 26, 117, 3, 2, 2, 2, 28, 133, 3, 2, 2, 2, 30, 135,
+	3, 2, 2, 2, 32, 141, 3, 2, 2, 2, 34, 143, 3, 2, 2, 2, 36, 155, 3, 2, 2,
+	2, 38, 160, 3, 2, 2, 2, 40, 163, 3, 2, 2, 2, 42, 44, 5, 40, 21, 2, 43,
+	42, 3, 2, 2, 2, 43, 44, 3, 2, 2, 2, 44, 45, 3, 2, 2, 2, 45, 46, 7, 2, 2,
+	3, 46, 3, 3, 2, 2, 2, 47, 48, 7, 13, 2, 2, 48, 49, 7, 36, 2, 2, 49, 50,
+	5, 16, 9, 2, 50, 5, 3, 2, 2, 2, 51, 52, 7, 14, 2, 2, 52, 53, 7, 36, 2,
+	2, 53, 54, 5, 16, 9, 2, 54, 7, 3, 2, 2, 2, 55, 56, 7, 15, 2, 2, 56, 57,
+	7, 36, 2, 2, 57, 58, 7, 3, 2, 2, 58, 59, 5, 24, 13, 2, 59, 60, 7, 4, 2,
+	2, 60, 61, 5, 10, 6, 2, 61, 9, 3, 2, 2, 2, 62, 66, 7, 7, 2, 2, 63, 65,
+	7, 36, 2, 2, 64, 63, 3, 2, 2, 2, 65, 68, 3, 2, 2, 2, 66, 64, 3, 2, 2, 2,
+	66, 67, 3, 2, 2, 2, 67, 69, 3, 2, 2, 2, 68, 66, 3, 2, 2, 2, 69, 70, 7,
+	8, 2, 2, 70, 11, 3, 2, 2, 2, 71, 76, 7, 36, 2, 2, 72, 73, 7, 10, 2, 2,
+	73, 75, 7, 36, 2, 2, 74, 72, 3, 2, 2, 2, 75, 78, 3, 2, 2, 2, 76, 74, 3,
+	2, 2, 2, 76, 77, 3, 2, 2, 2, 77, 13, 3, 2, 2, 2, 78, 76, 3, 2, 2, 2, 79,
+	80, 7, 3, 2, 2, 80, 81, 5, 12, 7, 2, 81, 15, 3, 2, 2, 2, 82, 84, 5, 14,
+	8, 2, 83, 82, 3, 2, 2, 2, 83, 84, 3, 2, 2, 2, 84, 85, 3, 2, 2, 2, 85, 89,
+	7, 7, 2, 2, 86, 88, 5, 36, 19, 2, 87, 86, 3, 2, 2, 2, 88, 91, 3, 2, 2,
+	2, 89, 87, 3, 2, 2, 2, 89, 90, 3, 2, 2, 2, 90, 92, 3, 2, 2, 2, 91, 89,
+	3, 2, 2, 2, 92, 93, 7, 8, 2, 2, 93, 17, 3, 2, 2, 2, 94, 100, 7, 16, 2,
+	2, 95, 100, 7, 17, 2, 2, 96, 100, 7, 19, 2, 2, 97, 100, 5, 20, 11, 2, 98,
+	100, 5, 22, 12, 2, 99, 94, 3, 2, 2, 2, 99, 95, 3, 2, 2, 2, 99, 96, 3, 2,
+	2, 2, 99, 97, 3, 2, 2, 2, 99, 98, 3, 2, 2, 2, 100, 19, 3, 2, 2, 2, 101,
+	102, 7, 18, 2, 2, 102, 103, 7, 3, 2, 2, 103, 104, 5, 24, 13, 2, 104, 105,
+	7, 4, 2, 2, 105, 21, 3, 2, 2, 2, 106, 107, 7, 20, 2, 2, 107, 108, 7, 3,
+	2, 2, 108, 109, 5, 24, 13, 2, 109, 110, 7, 10, 2, 2, 110, 111, 5, 24, 13,
+	2, 111, 112, 7, 4, 2, 2, 112, 23, 3, 2, 2, 2, 113, 116, 7, 36, 2, 2, 114,
+	116, 5, 18, 10, 2, 115, 113, 3, 2, 2, 2, 115, 114, 3, 2, 2, 2, 116, 25,
+	3, 2, 2, 2, 117, 118, 7, 24, 2, 2, 118, 119, 7, 9, 2, 2, 119, 120, 7, 36,
+	2, 2, 120, 27, 3, 2, 2, 2, 121, 134, 7, 25, 2, 2, 122, 134, 7, 26, 2, 2,
+	123, 134, 7, 27, 2, 2, 124, 134, 7, 28, 2, 2, 125, 134, 7, 29, 2, 2, 126,
+	134, 7, 30, 2, 2, 127, 134, 7, 31, 2, 2, 128, 134, 7, 32, 2, 2, 129, 134,
+	7, 33, 2, 2, 130, 134, 7, 34, 2, 2, 131, 134, 7, 35, 2, 2, 132, 134, 5,
+	26, 14, 2, 133, 121, 3, 2, 2, 2, 133, 122, 3, 2, 2, 2, 133, 123, 3, 2,
+	2, 2, 133, 124, 3, 2, 2, 2, 133, 125, 3, 2, 2, 2, 133, 126, 3, 2, 2, 2,
+	133, 127, 3, 2, 2, 2, 133, 128, 3, 2, 2, 2, 133, 129, 3, 2, 2, 2, 133,
+	130, 3, 2, 2, 2, 133, 131, 3, 2, 2, 2, 133, 132, 3, 2, 2, 2, 134, 29, 3,
+	2, 2, 2, 135, 136, 5, 28, 15, 2, 136, 31, 3, 2, 2, 2, 137, 142, 7, 21,
+	2, 2, 138, 142, 7, 23, 2, 2, 139, 142, 7, 22, 2, 2, 140, 142, 5, 30, 16,
+	2, 141, 137, 3, 2, 2, 2, 141, 138, 3, 2, 2, 2, 141, 139, 3, 2, 2, 2, 141,
+	140, 3, 2, 2, 2, 142, 33, 3, 2, 2, 2, 143, 144, 5, 24, 13, 2, 144, 153,
+	7, 36, 2, 2, 145, 147, 7, 12, 2, 2, 146, 148, 5, 32, 17, 2, 147, 146, 3,
+	2, 2, 2, 148, 149, 3, 2, 2, 2, 149, 147, 3, 2, 2, 2, 149, 150, 3, 2, 2,
+	2, 150, 151, 3, 2, 2, 2, 151, 152, 7, 12, 2, 2, 152, 154, 3, 2, 2, 2, 153,
+	145, 3, 2, 2, 2, 153, 154, 3, 2, 2, 2, 154, 35, 3, 2, 2, 2, 155, 156, 5,
+	34, 18, 2, 156, 37, 3, 2, 2, 2, 157, 161, 5, 6, 4, 2, 158, 161, 5, 8, 5,
+	2, 159, 161, 5, 4, 3, 2, 160, 157, 3, 2, 2, 2, 160, 158, 3, 2, 2, 2, 160,
+	159, 3, 2, 2, 2, 161, 39, 3, 2, 2, 2, 162, 164, 5, 38, 20, 2, 163, 162,
+	3, 2, 2, 2, 164, 165, 3, 2, 2, 2, 165, 163, 3, 2, 2, 2, 165, 166, 3, 2,
+	2, 2, 166, 41, 3, 2, 2, 2, 15, 43, 66, 76, 83, 89, 99, 115, 133, 141, 149,
+	153, 160, 165,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
-	"", "'<'", "'>'", "'('", "')'", "'{'", "'}'", "'.'", "','", "'_'", "'comp'",
-	"'enum'", "", "", "", "", "'map'", "", "", "", "", "'format.password'",
-	"'format.date'", "'format.datetime'", "'format.byte'", "'format.binary'",
-	"'format.email'", "'format.uuid'", "'format.uri'", "'format.hostname'",
+	"", "'<'", "'>'", "'('", "')'", "'{'", "'}'", "'.'", "','", "'_'", "'`'",
+	"'base'", "'comp'", "'enum'", "", "", "", "", "'map'", "", "", "", "",
+	"'format.password'", "'format.date'", "'format.datetime'", "'format.byte'",
+	"'format.binary'", "'format.email'", "'format.uuid'", "'format.uri'", "'format.hostname'",
 	"'format.ipv4'", "'format.ipv6'",
 }
 var symbolicNames = []string{
 	"", "LessThan", "MoreThan", "OpenParen", "CloseParen", "OpenBrace", "CloseBrace",
-	"Dot", "Comma", "Underscore", "ComponentInit", "EnumInit", "StringType",
-	"NumberType", "ArrayType", "BooleanType", "MapType", "Required", "Searchable",
-	"Indexed", "Format", "PasswordFormat", "DateFormat", "DateTimeFormat",
+	"Dot", "Comma", "Underscore", "Tick", "BaseInit", "ComponentInit", "EnumInit",
+	"StringType", "NumberType", "ArrayType", "BooleanType", "MapType", "Required",
+	"Searchable", "Indexed", "Format", "PasswordFormat", "DateFormat", "DateTimeFormat",
 	"ByteFormat", "BinaryFormat", "EmailFormat", "UuidFormat", "UriFormat",
 	"HostnameFormat", "Ipv4Format", "Ipv6Format", "Identifier", "WS", "COMMENT",
 	"LINE_COMMENT",
 }
 
 var ruleNames = []string{
-	"program", "objDeclaration", "enumDeclaration", "enumBlock", "identifierList",
-	"extendsStatement", "objTail", "nativeType", "arrayType", "mapType", "typeName",
-	"formatIdentifier", "formatType", "formatAnnotation", "annotationType",
-	"parameterDefinition", "objElement", "modelElement", "modelElements",
+	"program", "baseDeclaration", "objDeclaration", "enumDeclaration", "enumBlock",
+	"identifierList", "extendsStatement", "objTail", "nativeType", "arrayType",
+	"mapType", "typeName", "formatIdentifier", "formatType", "formatAnnotation",
+	"annotationType", "parameterDefinition", "objElement", "modelElement",
+	"modelElements",
 }
 var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
 
@@ -150,55 +154,58 @@ const (
 	SwaggableParserDot            = 7
 	SwaggableParserComma          = 8
 	SwaggableParserUnderscore     = 9
-	SwaggableParserComponentInit  = 10
-	SwaggableParserEnumInit       = 11
-	SwaggableParserStringType     = 12
-	SwaggableParserNumberType     = 13
-	SwaggableParserArrayType      = 14
-	SwaggableParserBooleanType    = 15
-	SwaggableParserMapType        = 16
-	SwaggableParserRequired       = 17
-	SwaggableParserSearchable     = 18
-	SwaggableParserIndexed        = 19
-	SwaggableParserFormat         = 20
-	SwaggableParserPasswordFormat = 21
-	SwaggableParserDateFormat     = 22
-	SwaggableParserDateTimeFormat = 23
-	SwaggableParserByteFormat     = 24
-	SwaggableParserBinaryFormat   = 25
-	SwaggableParserEmailFormat    = 26
-	SwaggableParserUuidFormat     = 27
-	SwaggableParserUriFormat      = 28
-	SwaggableParserHostnameFormat = 29
-	SwaggableParserIpv4Format     = 30
-	SwaggableParserIpv6Format     = 31
-	SwaggableParserIdentifier     = 32
-	SwaggableParserWS             = 33
-	SwaggableParserCOMMENT        = 34
-	SwaggableParserLINE_COMMENT   = 35
+	SwaggableParserTick           = 10
+	SwaggableParserBaseInit       = 11
+	SwaggableParserComponentInit  = 12
+	SwaggableParserEnumInit       = 13
+	SwaggableParserStringType     = 14
+	SwaggableParserNumberType     = 15
+	SwaggableParserArrayType      = 16
+	SwaggableParserBooleanType    = 17
+	SwaggableParserMapType        = 18
+	SwaggableParserRequired       = 19
+	SwaggableParserSearchable     = 20
+	SwaggableParserIndexed        = 21
+	SwaggableParserFormat         = 22
+	SwaggableParserPasswordFormat = 23
+	SwaggableParserDateFormat     = 24
+	SwaggableParserDateTimeFormat = 25
+	SwaggableParserByteFormat     = 26
+	SwaggableParserBinaryFormat   = 27
+	SwaggableParserEmailFormat    = 28
+	SwaggableParserUuidFormat     = 29
+	SwaggableParserUriFormat      = 30
+	SwaggableParserHostnameFormat = 31
+	SwaggableParserIpv4Format     = 32
+	SwaggableParserIpv6Format     = 33
+	SwaggableParserIdentifier     = 34
+	SwaggableParserWS             = 35
+	SwaggableParserCOMMENT        = 36
+	SwaggableParserLINE_COMMENT   = 37
 )
 
 // SwaggableParser rules.
 const (
 	SwaggableParserRULE_program             = 0
-	SwaggableParserRULE_objDeclaration      = 1
-	SwaggableParserRULE_enumDeclaration     = 2
-	SwaggableParserRULE_enumBlock           = 3
-	SwaggableParserRULE_identifierList      = 4
-	SwaggableParserRULE_extendsStatement    = 5
-	SwaggableParserRULE_objTail             = 6
-	SwaggableParserRULE_nativeType          = 7
-	SwaggableParserRULE_arrayType           = 8
-	SwaggableParserRULE_mapType             = 9
-	SwaggableParserRULE_typeName            = 10
-	SwaggableParserRULE_formatIdentifier    = 11
-	SwaggableParserRULE_formatType          = 12
-	SwaggableParserRULE_formatAnnotation    = 13
-	SwaggableParserRULE_annotationType      = 14
-	SwaggableParserRULE_parameterDefinition = 15
-	SwaggableParserRULE_objElement          = 16
-	SwaggableParserRULE_modelElement        = 17
-	SwaggableParserRULE_modelElements       = 18
+	SwaggableParserRULE_baseDeclaration     = 1
+	SwaggableParserRULE_objDeclaration      = 2
+	SwaggableParserRULE_enumDeclaration     = 3
+	SwaggableParserRULE_enumBlock           = 4
+	SwaggableParserRULE_identifierList      = 5
+	SwaggableParserRULE_extendsStatement    = 6
+	SwaggableParserRULE_objTail             = 7
+	SwaggableParserRULE_nativeType          = 8
+	SwaggableParserRULE_arrayType           = 9
+	SwaggableParserRULE_mapType             = 10
+	SwaggableParserRULE_typeName            = 11
+	SwaggableParserRULE_formatIdentifier    = 12
+	SwaggableParserRULE_formatType          = 13
+	SwaggableParserRULE_formatAnnotation    = 14
+	SwaggableParserRULE_annotationType      = 15
+	SwaggableParserRULE_parameterDefinition = 16
+	SwaggableParserRULE_objElement          = 17
+	SwaggableParserRULE_modelElement        = 18
+	SwaggableParserRULE_modelElements       = 19
 )
 
 // IProgramContext is an interface to support dynamic dispatch.
@@ -295,20 +302,133 @@ func (p *SwaggableParser) Program() (localctx IProgramContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(39)
+	p.SetState(41)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == SwaggableParserComponentInit || _la == SwaggableParserEnumInit {
+	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<SwaggableParserBaseInit)|(1<<SwaggableParserComponentInit)|(1<<SwaggableParserEnumInit))) != 0 {
 		{
-			p.SetState(38)
+			p.SetState(40)
 			p.ModelElements()
 		}
 
 	}
 	{
-		p.SetState(41)
+		p.SetState(43)
 		p.Match(SwaggableParserEOF)
+	}
+
+	return localctx
+}
+
+// IBaseDeclarationContext is an interface to support dynamic dispatch.
+type IBaseDeclarationContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsBaseDeclarationContext differentiates from other interfaces.
+	IsBaseDeclarationContext()
+}
+
+type BaseDeclarationContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyBaseDeclarationContext() *BaseDeclarationContext {
+	var p = new(BaseDeclarationContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = SwaggableParserRULE_baseDeclaration
+	return p
+}
+
+func (*BaseDeclarationContext) IsBaseDeclarationContext() {}
+
+func NewBaseDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *BaseDeclarationContext {
+	var p = new(BaseDeclarationContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = SwaggableParserRULE_baseDeclaration
+
+	return p
+}
+
+func (s *BaseDeclarationContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *BaseDeclarationContext) BaseInit() antlr.TerminalNode {
+	return s.GetToken(SwaggableParserBaseInit, 0)
+}
+
+func (s *BaseDeclarationContext) Identifier() antlr.TerminalNode {
+	return s.GetToken(SwaggableParserIdentifier, 0)
+}
+
+func (s *BaseDeclarationContext) ObjTail() IObjTailContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IObjTailContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IObjTailContext)
+}
+
+func (s *BaseDeclarationContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *BaseDeclarationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *BaseDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(SwaggableParserListener); ok {
+		listenerT.EnterBaseDeclaration(s)
+	}
+}
+
+func (s *BaseDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(SwaggableParserListener); ok {
+		listenerT.ExitBaseDeclaration(s)
+	}
+}
+
+func (p *SwaggableParser) BaseDeclaration() (localctx IBaseDeclarationContext) {
+	localctx = NewBaseDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 2, SwaggableParserRULE_baseDeclaration)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(45)
+		p.Match(SwaggableParserBaseInit)
+	}
+	{
+		p.SetState(46)
+		p.Match(SwaggableParserIdentifier)
+	}
+	{
+		p.SetState(47)
+		p.ObjTail()
 	}
 
 	return localctx
@@ -392,7 +512,7 @@ func (s *ObjDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) ObjDeclaration() (localctx IObjDeclarationContext) {
 	localctx = NewObjDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, SwaggableParserRULE_objDeclaration)
+	p.EnterRule(localctx, 4, SwaggableParserRULE_objDeclaration)
 
 	defer func() {
 		p.ExitRule()
@@ -412,15 +532,15 @@ func (p *SwaggableParser) ObjDeclaration() (localctx IObjDeclarationContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(43)
+		p.SetState(49)
 		p.Match(SwaggableParserComponentInit)
 	}
 	{
-		p.SetState(44)
+		p.SetState(50)
 		p.Match(SwaggableParserIdentifier)
 	}
 	{
-		p.SetState(45)
+		p.SetState(51)
 		p.ObjTail()
 	}
 
@@ -515,7 +635,7 @@ func (s *EnumDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) EnumDeclaration() (localctx IEnumDeclarationContext) {
 	localctx = NewEnumDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, SwaggableParserRULE_enumDeclaration)
+	p.EnterRule(localctx, 6, SwaggableParserRULE_enumDeclaration)
 
 	defer func() {
 		p.ExitRule()
@@ -535,27 +655,27 @@ func (p *SwaggableParser) EnumDeclaration() (localctx IEnumDeclarationContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(47)
+		p.SetState(53)
 		p.Match(SwaggableParserEnumInit)
 	}
 	{
-		p.SetState(48)
+		p.SetState(54)
 		p.Match(SwaggableParserIdentifier)
 	}
 	{
-		p.SetState(49)
+		p.SetState(55)
 		p.Match(SwaggableParserLessThan)
 	}
 	{
-		p.SetState(50)
+		p.SetState(56)
 		p.TypeName()
 	}
 	{
-		p.SetState(51)
+		p.SetState(57)
 		p.Match(SwaggableParserMoreThan)
 	}
 	{
-		p.SetState(52)
+		p.SetState(58)
 		p.EnumBlock()
 	}
 
@@ -630,7 +750,7 @@ func (s *EnumBlockContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) EnumBlock() (localctx IEnumBlockContext) {
 	localctx = NewEnumBlockContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, SwaggableParserRULE_enumBlock)
+	p.EnterRule(localctx, 8, SwaggableParserRULE_enumBlock)
 	var _la int
 
 	defer func() {
@@ -651,25 +771,25 @@ func (p *SwaggableParser) EnumBlock() (localctx IEnumBlockContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(54)
+		p.SetState(60)
 		p.Match(SwaggableParserOpenBrace)
 	}
-	p.SetState(58)
+	p.SetState(64)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == SwaggableParserIdentifier {
 		{
-			p.SetState(55)
+			p.SetState(61)
 			p.Match(SwaggableParserIdentifier)
 		}
 
-		p.SetState(60)
+		p.SetState(66)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(61)
+		p.SetState(67)
 		p.Match(SwaggableParserCloseBrace)
 	}
 
@@ -722,6 +842,14 @@ func (s *IdentifierListContext) Identifier(i int) antlr.TerminalNode {
 	return s.GetToken(SwaggableParserIdentifier, i)
 }
 
+func (s *IdentifierListContext) AllComma() []antlr.TerminalNode {
+	return s.GetTokens(SwaggableParserComma)
+}
+
+func (s *IdentifierListContext) Comma(i int) antlr.TerminalNode {
+	return s.GetToken(SwaggableParserComma, i)
+}
+
 func (s *IdentifierListContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -744,7 +872,7 @@ func (s *IdentifierListContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) IdentifierList() (localctx IIdentifierListContext) {
 	localctx = NewIdentifierListContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, SwaggableParserRULE_identifierList)
+	p.EnterRule(localctx, 10, SwaggableParserRULE_identifierList)
 	var _la int
 
 	defer func() {
@@ -765,24 +893,24 @@ func (p *SwaggableParser) IdentifierList() (localctx IIdentifierListContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(63)
+		p.SetState(69)
 		p.Match(SwaggableParserIdentifier)
 	}
-	p.SetState(68)
+	p.SetState(74)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == SwaggableParserComma {
 		{
-			p.SetState(64)
+			p.SetState(70)
 			p.Match(SwaggableParserComma)
 		}
 		{
-			p.SetState(65)
+			p.SetState(71)
 			p.Match(SwaggableParserIdentifier)
 		}
 
-		p.SetState(70)
+		p.SetState(76)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -828,6 +956,10 @@ func NewExtendsStatementContext(parser antlr.Parser, parent antlr.ParserRuleCont
 
 func (s *ExtendsStatementContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *ExtendsStatementContext) LessThan() antlr.TerminalNode {
+	return s.GetToken(SwaggableParserLessThan, 0)
+}
+
 func (s *ExtendsStatementContext) IdentifierList() IIdentifierListContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdentifierListContext)(nil)).Elem(), 0)
 
@@ -860,7 +992,7 @@ func (s *ExtendsStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) ExtendsStatement() (localctx IExtendsStatementContext) {
 	localctx = NewExtendsStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, SwaggableParserRULE_extendsStatement)
+	p.EnterRule(localctx, 12, SwaggableParserRULE_extendsStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -880,11 +1012,11 @@ func (p *SwaggableParser) ExtendsStatement() (localctx IExtendsStatementContext)
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(71)
+		p.SetState(77)
 		p.Match(SwaggableParserLessThan)
 	}
 	{
-		p.SetState(72)
+		p.SetState(78)
 		p.IdentifierList()
 	}
 
@@ -984,7 +1116,7 @@ func (s *ObjTailContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) ObjTail() (localctx IObjTailContext) {
 	localctx = NewObjTailContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, SwaggableParserRULE_objTail)
+	p.EnterRule(localctx, 14, SwaggableParserRULE_objTail)
 	var _la int
 
 	defer func() {
@@ -1004,37 +1136,37 @@ func (p *SwaggableParser) ObjTail() (localctx IObjTailContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(75)
+	p.SetState(81)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == SwaggableParserLessThan {
 		{
-			p.SetState(74)
+			p.SetState(80)
 			p.ExtendsStatement()
 		}
 
 	}
 	{
-		p.SetState(77)
+		p.SetState(83)
 		p.Match(SwaggableParserOpenBrace)
 	}
-	p.SetState(81)
+	p.SetState(87)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ((_la-12)&-(0x1f+1)) == 0 && ((1<<uint((_la-12)))&((1<<(SwaggableParserStringType-12))|(1<<(SwaggableParserNumberType-12))|(1<<(SwaggableParserArrayType-12))|(1<<(SwaggableParserBooleanType-12))|(1<<(SwaggableParserMapType-12))|(1<<(SwaggableParserIdentifier-12)))) != 0 {
+	for ((_la-14)&-(0x1f+1)) == 0 && ((1<<uint((_la-14)))&((1<<(SwaggableParserStringType-14))|(1<<(SwaggableParserNumberType-14))|(1<<(SwaggableParserArrayType-14))|(1<<(SwaggableParserBooleanType-14))|(1<<(SwaggableParserMapType-14))|(1<<(SwaggableParserIdentifier-14)))) != 0 {
 		{
-			p.SetState(78)
+			p.SetState(84)
 			p.ObjElement()
 		}
 
-		p.SetState(83)
+		p.SetState(89)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(84)
+		p.SetState(90)
 		p.Match(SwaggableParserCloseBrace)
 	}
 
@@ -1133,7 +1265,7 @@ func (s *NativeTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) NativeType() (localctx INativeTypeContext) {
 	localctx = NewNativeTypeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, SwaggableParserRULE_nativeType)
+	p.EnterRule(localctx, 16, SwaggableParserRULE_nativeType)
 
 	defer func() {
 		p.ExitRule()
@@ -1151,42 +1283,42 @@ func (p *SwaggableParser) NativeType() (localctx INativeTypeContext) {
 		}
 	}()
 
-	p.SetState(91)
+	p.SetState(97)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case SwaggableParserStringType:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(86)
+			p.SetState(92)
 			p.Match(SwaggableParserStringType)
 		}
 
 	case SwaggableParserNumberType:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(87)
+			p.SetState(93)
 			p.Match(SwaggableParserNumberType)
 		}
 
 	case SwaggableParserBooleanType:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(88)
+			p.SetState(94)
 			p.Match(SwaggableParserBooleanType)
 		}
 
 	case SwaggableParserArrayType:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(89)
+			p.SetState(95)
 			p.ArrayType()
 		}
 
 	case SwaggableParserMapType:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(90)
+			p.SetState(96)
 			p.MapType()
 		}
 
@@ -1239,6 +1371,10 @@ func (s *ArrayTypeContext) ArrayType() antlr.TerminalNode {
 	return s.GetToken(SwaggableParserArrayType, 0)
 }
 
+func (s *ArrayTypeContext) LessThan() antlr.TerminalNode {
+	return s.GetToken(SwaggableParserLessThan, 0)
+}
+
 func (s *ArrayTypeContext) TypeName() ITypeNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITypeNameContext)(nil)).Elem(), 0)
 
@@ -1247,6 +1383,10 @@ func (s *ArrayTypeContext) TypeName() ITypeNameContext {
 	}
 
 	return t.(ITypeNameContext)
+}
+
+func (s *ArrayTypeContext) MoreThan() antlr.TerminalNode {
+	return s.GetToken(SwaggableParserMoreThan, 0)
 }
 
 func (s *ArrayTypeContext) GetRuleContext() antlr.RuleContext {
@@ -1271,7 +1411,7 @@ func (s *ArrayTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) ArrayType() (localctx IArrayTypeContext) {
 	localctx = NewArrayTypeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, SwaggableParserRULE_arrayType)
+	p.EnterRule(localctx, 18, SwaggableParserRULE_arrayType)
 
 	defer func() {
 		p.ExitRule()
@@ -1291,19 +1431,19 @@ func (p *SwaggableParser) ArrayType() (localctx IArrayTypeContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(93)
+		p.SetState(99)
 		p.Match(SwaggableParserArrayType)
 	}
 	{
-		p.SetState(94)
+		p.SetState(100)
 		p.Match(SwaggableParserLessThan)
 	}
 	{
-		p.SetState(95)
+		p.SetState(101)
 		p.TypeName()
 	}
 	{
-		p.SetState(96)
+		p.SetState(102)
 		p.Match(SwaggableParserMoreThan)
 	}
 
@@ -1352,6 +1492,10 @@ func (s *MapTypeContext) MapType() antlr.TerminalNode {
 	return s.GetToken(SwaggableParserMapType, 0)
 }
 
+func (s *MapTypeContext) LessThan() antlr.TerminalNode {
+	return s.GetToken(SwaggableParserLessThan, 0)
+}
+
 func (s *MapTypeContext) AllTypeName() []ITypeNameContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ITypeNameContext)(nil)).Elem())
 	var tst = make([]ITypeNameContext, len(ts))
@@ -1373,6 +1517,14 @@ func (s *MapTypeContext) TypeName(i int) ITypeNameContext {
 	}
 
 	return t.(ITypeNameContext)
+}
+
+func (s *MapTypeContext) Comma() antlr.TerminalNode {
+	return s.GetToken(SwaggableParserComma, 0)
+}
+
+func (s *MapTypeContext) MoreThan() antlr.TerminalNode {
+	return s.GetToken(SwaggableParserMoreThan, 0)
 }
 
 func (s *MapTypeContext) GetRuleContext() antlr.RuleContext {
@@ -1397,7 +1549,7 @@ func (s *MapTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) MapType() (localctx IMapTypeContext) {
 	localctx = NewMapTypeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 18, SwaggableParserRULE_mapType)
+	p.EnterRule(localctx, 20, SwaggableParserRULE_mapType)
 
 	defer func() {
 		p.ExitRule()
@@ -1417,27 +1569,27 @@ func (p *SwaggableParser) MapType() (localctx IMapTypeContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(98)
+		p.SetState(104)
 		p.Match(SwaggableParserMapType)
 	}
 	{
-		p.SetState(99)
+		p.SetState(105)
 		p.Match(SwaggableParserLessThan)
 	}
 	{
-		p.SetState(100)
+		p.SetState(106)
 		p.TypeName()
 	}
 	{
-		p.SetState(101)
+		p.SetState(107)
 		p.Match(SwaggableParserComma)
 	}
 	{
-		p.SetState(102)
+		p.SetState(108)
 		p.TypeName()
 	}
 	{
-		p.SetState(103)
+		p.SetState(109)
 		p.Match(SwaggableParserMoreThan)
 	}
 
@@ -1518,7 +1670,7 @@ func (s *TypeNameContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) TypeName() (localctx ITypeNameContext) {
 	localctx = NewTypeNameContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 20, SwaggableParserRULE_typeName)
+	p.EnterRule(localctx, 22, SwaggableParserRULE_typeName)
 
 	defer func() {
 		p.ExitRule()
@@ -1536,21 +1688,21 @@ func (p *SwaggableParser) TypeName() (localctx ITypeNameContext) {
 		}
 	}()
 
-	p.SetState(107)
+	p.SetState(113)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case SwaggableParserIdentifier:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(105)
+			p.SetState(111)
 			p.Match(SwaggableParserIdentifier)
 		}
 
 	case SwaggableParserStringType, SwaggableParserNumberType, SwaggableParserArrayType, SwaggableParserBooleanType, SwaggableParserMapType:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(106)
+			p.SetState(112)
 			p.NativeType()
 		}
 
@@ -1629,7 +1781,7 @@ func (s *FormatIdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) FormatIdentifier() (localctx IFormatIdentifierContext) {
 	localctx = NewFormatIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, SwaggableParserRULE_formatIdentifier)
+	p.EnterRule(localctx, 24, SwaggableParserRULE_formatIdentifier)
 
 	defer func() {
 		p.ExitRule()
@@ -1649,15 +1801,15 @@ func (p *SwaggableParser) FormatIdentifier() (localctx IFormatIdentifierContext)
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(109)
+		p.SetState(115)
 		p.Match(SwaggableParserFormat)
 	}
 	{
-		p.SetState(110)
+		p.SetState(116)
 		p.Match(SwaggableParserDot)
 	}
 	{
-		p.SetState(111)
+		p.SetState(117)
 		p.Match(SwaggableParserIdentifier)
 	}
 
@@ -1778,7 +1930,7 @@ func (s *FormatTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) FormatType() (localctx IFormatTypeContext) {
 	localctx = NewFormatTypeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 24, SwaggableParserRULE_formatType)
+	p.EnterRule(localctx, 26, SwaggableParserRULE_formatType)
 
 	defer func() {
 		p.ExitRule()
@@ -1796,91 +1948,91 @@ func (p *SwaggableParser) FormatType() (localctx IFormatTypeContext) {
 		}
 	}()
 
-	p.SetState(125)
+	p.SetState(131)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case SwaggableParserPasswordFormat:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(113)
+			p.SetState(119)
 			p.Match(SwaggableParserPasswordFormat)
 		}
 
 	case SwaggableParserDateFormat:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(114)
+			p.SetState(120)
 			p.Match(SwaggableParserDateFormat)
 		}
 
 	case SwaggableParserDateTimeFormat:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(115)
+			p.SetState(121)
 			p.Match(SwaggableParserDateTimeFormat)
 		}
 
 	case SwaggableParserByteFormat:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(116)
+			p.SetState(122)
 			p.Match(SwaggableParserByteFormat)
 		}
 
 	case SwaggableParserBinaryFormat:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(117)
+			p.SetState(123)
 			p.Match(SwaggableParserBinaryFormat)
 		}
 
 	case SwaggableParserEmailFormat:
 		p.EnterOuterAlt(localctx, 6)
 		{
-			p.SetState(118)
+			p.SetState(124)
 			p.Match(SwaggableParserEmailFormat)
 		}
 
 	case SwaggableParserUuidFormat:
 		p.EnterOuterAlt(localctx, 7)
 		{
-			p.SetState(119)
+			p.SetState(125)
 			p.Match(SwaggableParserUuidFormat)
 		}
 
 	case SwaggableParserUriFormat:
 		p.EnterOuterAlt(localctx, 8)
 		{
-			p.SetState(120)
+			p.SetState(126)
 			p.Match(SwaggableParserUriFormat)
 		}
 
 	case SwaggableParserHostnameFormat:
 		p.EnterOuterAlt(localctx, 9)
 		{
-			p.SetState(121)
+			p.SetState(127)
 			p.Match(SwaggableParserHostnameFormat)
 		}
 
 	case SwaggableParserIpv4Format:
 		p.EnterOuterAlt(localctx, 10)
 		{
-			p.SetState(122)
+			p.SetState(128)
 			p.Match(SwaggableParserIpv4Format)
 		}
 
 	case SwaggableParserIpv6Format:
 		p.EnterOuterAlt(localctx, 11)
 		{
-			p.SetState(123)
+			p.SetState(129)
 			p.Match(SwaggableParserIpv6Format)
 		}
 
 	case SwaggableParserFormat:
 		p.EnterOuterAlt(localctx, 12)
 		{
-			p.SetState(124)
+			p.SetState(130)
 			p.FormatIdentifier()
 		}
 
@@ -1961,7 +2113,7 @@ func (s *FormatAnnotationContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) FormatAnnotation() (localctx IFormatAnnotationContext) {
 	localctx = NewFormatAnnotationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 26, SwaggableParserRULE_formatAnnotation)
+	p.EnterRule(localctx, 28, SwaggableParserRULE_formatAnnotation)
 
 	defer func() {
 		p.ExitRule()
@@ -1981,7 +2133,7 @@ func (p *SwaggableParser) FormatAnnotation() (localctx IFormatAnnotationContext)
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(127)
+		p.SetState(133)
 		p.FormatType()
 	}
 
@@ -2070,7 +2222,7 @@ func (s *AnnotationTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) AnnotationType() (localctx IAnnotationTypeContext) {
 	localctx = NewAnnotationTypeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 28, SwaggableParserRULE_annotationType)
+	p.EnterRule(localctx, 30, SwaggableParserRULE_annotationType)
 
 	defer func() {
 		p.ExitRule()
@@ -2088,35 +2240,35 @@ func (p *SwaggableParser) AnnotationType() (localctx IAnnotationTypeContext) {
 		}
 	}()
 
-	p.SetState(133)
+	p.SetState(139)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case SwaggableParserRequired:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(129)
+			p.SetState(135)
 			p.Match(SwaggableParserRequired)
 		}
 
 	case SwaggableParserIndexed:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(130)
+			p.SetState(136)
 			p.Match(SwaggableParserIndexed)
 		}
 
 	case SwaggableParserSearchable:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(131)
+			p.SetState(137)
 			p.Match(SwaggableParserSearchable)
 		}
 
 	case SwaggableParserFormat, SwaggableParserPasswordFormat, SwaggableParserDateFormat, SwaggableParserDateTimeFormat, SwaggableParserByteFormat, SwaggableParserBinaryFormat, SwaggableParserEmailFormat, SwaggableParserUuidFormat, SwaggableParserUriFormat, SwaggableParserHostnameFormat, SwaggableParserIpv4Format, SwaggableParserIpv6Format:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(132)
+			p.SetState(138)
 			p.FormatAnnotation()
 		}
 
@@ -2179,6 +2331,14 @@ func (s *ParameterDefinitionContext) Identifier() antlr.TerminalNode {
 	return s.GetToken(SwaggableParserIdentifier, 0)
 }
 
+func (s *ParameterDefinitionContext) AllTick() []antlr.TerminalNode {
+	return s.GetTokens(SwaggableParserTick)
+}
+
+func (s *ParameterDefinitionContext) Tick(i int) antlr.TerminalNode {
+	return s.GetToken(SwaggableParserTick, i)
+}
+
 func (s *ParameterDefinitionContext) AllAnnotationType() []IAnnotationTypeContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IAnnotationTypeContext)(nil)).Elem())
 	var tst = make([]IAnnotationTypeContext, len(ts))
@@ -2224,7 +2384,7 @@ func (s *ParameterDefinitionContext) ExitRule(listener antlr.ParseTreeListener) 
 
 func (p *SwaggableParser) ParameterDefinition() (localctx IParameterDefinitionContext) {
 	localctx = NewParameterDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 30, SwaggableParserRULE_parameterDefinition)
+	p.EnterRule(localctx, 32, SwaggableParserRULE_parameterDefinition)
 	var _la int
 
 	defer func() {
@@ -2245,39 +2405,39 @@ func (p *SwaggableParser) ParameterDefinition() (localctx IParameterDefinitionCo
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(135)
+		p.SetState(141)
 		p.TypeName()
 	}
 	{
-		p.SetState(136)
+		p.SetState(142)
 		p.Match(SwaggableParserIdentifier)
 	}
-	p.SetState(145)
+	p.SetState(151)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == SwaggableParserOpenParen {
+	if _la == SwaggableParserTick {
 		{
-			p.SetState(137)
-			p.Match(SwaggableParserOpenParen)
+			p.SetState(143)
+			p.Match(SwaggableParserTick)
 		}
-		p.SetState(139)
+		p.SetState(145)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<SwaggableParserRequired)|(1<<SwaggableParserSearchable)|(1<<SwaggableParserIndexed)|(1<<SwaggableParserFormat)|(1<<SwaggableParserPasswordFormat)|(1<<SwaggableParserDateFormat)|(1<<SwaggableParserDateTimeFormat)|(1<<SwaggableParserByteFormat)|(1<<SwaggableParserBinaryFormat)|(1<<SwaggableParserEmailFormat)|(1<<SwaggableParserUuidFormat)|(1<<SwaggableParserUriFormat)|(1<<SwaggableParserHostnameFormat)|(1<<SwaggableParserIpv4Format)|(1<<SwaggableParserIpv6Format))) != 0) {
+		for ok := true; ok; ok = (((_la-19)&-(0x1f+1)) == 0 && ((1<<uint((_la-19)))&((1<<(SwaggableParserRequired-19))|(1<<(SwaggableParserSearchable-19))|(1<<(SwaggableParserIndexed-19))|(1<<(SwaggableParserFormat-19))|(1<<(SwaggableParserPasswordFormat-19))|(1<<(SwaggableParserDateFormat-19))|(1<<(SwaggableParserDateTimeFormat-19))|(1<<(SwaggableParserByteFormat-19))|(1<<(SwaggableParserBinaryFormat-19))|(1<<(SwaggableParserEmailFormat-19))|(1<<(SwaggableParserUuidFormat-19))|(1<<(SwaggableParserUriFormat-19))|(1<<(SwaggableParserHostnameFormat-19))|(1<<(SwaggableParserIpv4Format-19))|(1<<(SwaggableParserIpv6Format-19)))) != 0) {
 			{
-				p.SetState(138)
+				p.SetState(144)
 				p.AnnotationType()
 			}
 
-			p.SetState(141)
+			p.SetState(147)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(143)
-			p.Match(SwaggableParserCloseParen)
+			p.SetState(149)
+			p.Match(SwaggableParserTick)
 		}
 
 	}
@@ -2355,7 +2515,7 @@ func (s *ObjElementContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) ObjElement() (localctx IObjElementContext) {
 	localctx = NewObjElementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, SwaggableParserRULE_objElement)
+	p.EnterRule(localctx, 34, SwaggableParserRULE_objElement)
 
 	defer func() {
 		p.ExitRule()
@@ -2375,7 +2535,7 @@ func (p *SwaggableParser) ObjElement() (localctx IObjElementContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(147)
+		p.SetState(153)
 		p.ParameterDefinition()
 	}
 
@@ -2440,6 +2600,16 @@ func (s *ModelElementContext) EnumDeclaration() IEnumDeclarationContext {
 	return t.(IEnumDeclarationContext)
 }
 
+func (s *ModelElementContext) BaseDeclaration() IBaseDeclarationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IBaseDeclarationContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IBaseDeclarationContext)
+}
+
 func (s *ModelElementContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -2462,7 +2632,7 @@ func (s *ModelElementContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) ModelElement() (localctx IModelElementContext) {
 	localctx = NewModelElementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 34, SwaggableParserRULE_modelElement)
+	p.EnterRule(localctx, 36, SwaggableParserRULE_modelElement)
 
 	defer func() {
 		p.ExitRule()
@@ -2480,22 +2650,29 @@ func (p *SwaggableParser) ModelElement() (localctx IModelElementContext) {
 		}
 	}()
 
-	p.SetState(151)
+	p.SetState(158)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case SwaggableParserComponentInit:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(149)
+			p.SetState(155)
 			p.ObjDeclaration()
 		}
 
 	case SwaggableParserEnumInit:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(150)
+			p.SetState(156)
 			p.EnumDeclaration()
+		}
+
+	case SwaggableParserBaseInit:
+		p.EnterOuterAlt(localctx, 3)
+		{
+			p.SetState(157)
+			p.BaseDeclaration()
 		}
 
 	default:
@@ -2588,7 +2765,7 @@ func (s *ModelElementsContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *SwaggableParser) ModelElements() (localctx IModelElementsContext) {
 	localctx = NewModelElementsContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 36, SwaggableParserRULE_modelElements)
+	p.EnterRule(localctx, 38, SwaggableParserRULE_modelElements)
 	var _la int
 
 	defer func() {
@@ -2608,17 +2785,17 @@ func (p *SwaggableParser) ModelElements() (localctx IModelElementsContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(154)
+	p.SetState(161)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = _la == SwaggableParserComponentInit || _la == SwaggableParserEnumInit {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<SwaggableParserBaseInit)|(1<<SwaggableParserComponentInit)|(1<<SwaggableParserEnumInit))) != 0) {
 		{
-			p.SetState(153)
+			p.SetState(160)
 			p.ModelElement()
 		}
 
-		p.SetState(156)
+		p.SetState(163)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}

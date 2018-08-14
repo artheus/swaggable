@@ -12,8 +12,10 @@ CloseBrace:   '}';
 Dot:          '.';
 Comma:        ',';
 Underscore:   '_';
+Tick:         '`';
 
 // keywords
+BaseInit:         'base';
 ComponentInit:    'comp';
 EnumInit:         'enum';
 //SecSchemeInit:    'sec';

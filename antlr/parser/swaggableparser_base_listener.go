@@ -27,6 +27,12 @@ func (s *BaseSwaggableParserListener) EnterProgram(ctx *ProgramContext) {}
 // ExitProgram is called when production program is exited.
 func (s *BaseSwaggableParserListener) ExitProgram(ctx *ProgramContext) {}
 
+// EnterBaseDeclaration is called when production baseDeclaration is entered.
+func (s *BaseSwaggableParserListener) EnterBaseDeclaration(ctx *BaseDeclarationContext) {}
+
+// ExitBaseDeclaration is called when production baseDeclaration is exited.
+func (s *BaseSwaggableParserListener) ExitBaseDeclaration(ctx *BaseDeclarationContext) {}
+
 // EnterObjDeclaration is called when production objDeclaration is entered.
 func (s *BaseSwaggableParserListener) EnterObjDeclaration(ctx *ObjDeclarationContext) {}
 

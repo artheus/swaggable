@@ -8,6 +8,10 @@ program
   : modelElements? EOF
   ;
 
+baseDeclaration
+  : BaseInit Identifier objTail
+  ;
+
 objDeclaration
   : ComponentInit Identifier objTail
   ;
@@ -21,11 +25,11 @@ enumBlock
   ;
 
 identifierList
-  : Identifier (',' Identifier)*
+  : Identifier (Comma Identifier)*
   ;
 
 extendsStatement
-  : ('<' identifierList)
+  : (LessThan identifierList)
   ;
 
 objTail
@@ -41,11 +45,11 @@ nativeType
   ;
 
 arrayType
-  : ArrayType '<' typeName '>'
+  : ArrayType LessThan typeName MoreThan
   ;
 
 mapType
-  : MapType '<' typeName ',' typeName '>'
+  : MapType LessThan typeName Comma typeName MoreThan
   ;
 
 typeName
@@ -84,7 +88,7 @@ annotationType
   ;
 
 parameterDefinition
-  : typeName Identifier ('(' annotationType+ ')')?
+  : typeName Identifier (Tick annotationType+ Tick)?
   ;
 
 objElement
@@ -94,6 +98,7 @@ objElement
 modelElement
   : objDeclaration
   | enumDeclaration
+  | baseDeclaration
   ;
 
 modelElements
