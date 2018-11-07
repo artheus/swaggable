@@ -1,6 +1,8 @@
 # Swaggable
 
-Simple language to generate larger swagger specs for code generation
+Simple language to generate larger swagger specs for code generation.
+
+The idea behind this is to create a minimal model definition for a CRUD api (incl api-client) which will expand into a larger specification which will act as the base for code generation. This way, people won't have to write much for just creating a simple Restful CRUD API service.
 
 # Swaggable syntax
 
